@@ -91,7 +91,7 @@ clicked = clickable_images(
 
 
 # If an image is clicked, redirect to Eleven Labs AI chat
-if clicked > -1:
+if clicked == 0:
 
     # st.video('img\videoplayback.mp4')
     # Redirecting to Eleven Labs
@@ -100,4 +100,22 @@ if clicked > -1:
     # st.markdown(f"[Click here if not redirected]( {url} )", unsafe_allow_html=True)
 
     # Open in the browser automatically
+    webbrowser.open_new_tab(url)
+
+if clicked == 1:
+
+    url = "http://localhost:8503/"
+    
+    webbrowser.open_new_tab(url)
+    
+if clicked == 2:
+    
+    url = "http://localhost:8504/"
+    
+    webbrowser.open_new_tab(url)
+    
+if clicked == 3:
+    
+    url = "http://localhost:8505/"
+    
     webbrowser.open_new_tab(url)
