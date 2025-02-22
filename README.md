@@ -25,6 +25,16 @@ Parents or educators receive:
 
 ---
 
+## Market Potential
+
+The global *language learning market* is experiencing significant growth, projected to reach *$120.5 billion by 2030, growing at a **CAGR of 10.5%*. 
+
+With an increasing demand for *multilingual education* and *early language development tools, there is a significant opportunity for AI-driven solutions like **Nora AI* to make a lasting impact. 
+
+The market segment for *children’s language learning, in particular, remains largely underserved, highlighting the potential for **broad adoption in homes, schools, and early education programs worldwide*.
+
+---
+
 ## Key Features
 
 1. **Real-Time, Interactive Conversation (ElevenLabs Conversational AI)**  
