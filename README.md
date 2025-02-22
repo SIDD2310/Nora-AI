@@ -6,10 +6,11 @@ Welcome to **NORA AI!** This application is designed to assist children—especi
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Key Features](#key-features)
-3. [Architecture & Workflow](#architecture--workflow)
-4. [Contributing](#contributing)
-5. [License](#license)
+2. [Market Potential](#market-potential)
+3. [Key Features](#key-features)
+4. [Architecture & Workflow](#architecture--workflow)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ---
 
