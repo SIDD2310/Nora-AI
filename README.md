@@ -33,7 +33,7 @@ Parents or educators receive:
 
 2. **Multi-Language Support**  
    - Supports **Chinese, Dutch, Arabic, English, and Hindi**.  
-   - Children can speak or type in any of these languages, and Nora will respond accordingly.
+   - Children can speak in any of these languages, and Nora will respond accordingly.
 
 3. **Automated Transcript Retrieval**  
    - Fetch the child’s conversation transcript with a single click.  
@@ -49,7 +49,7 @@ Parents or educators receive:
      - Suggested conversation starters and hands-on activities.
 
 5. **Customizable UI (Streamlit)**  
-   - **Space Exploration Theme** (with custom fonts and visuals) for a playful and appealing interface.  
+   - **Space, Sea, Jungle, Farm Exploration Theme** (with custom fonts and visuals) for a playful and appealing interface.  
    - Easily adaptable for other themes or branding if desired.
 
 6. **User-Friendly Dashboard**  
