@@ -18,35 +18,40 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.big-font {
-    font-size:120px !important;
-}
-</style>
-""", unsafe_allow_html=True)
+def font_to_base64(font_path):
+    with open(font_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-# Custom CSS for "Slopes" font
-custom_css = """
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Slope&display=swap');
+# Path to your font file (ensure this file is in the same directory or update the path)
+font_path = "slopes-cufonfonts\Slopes.ttf"  # Change this to the actual TTF font filename
 
-.big-font {
-    font-family: 'Slopes', sans-serif;
-    font-size: 50px;
+# Convert the font to Base64
+font_base64 = font_to_base64(font_path)
+
+# Inject CSS with the Base64-encoded font
+custom_css = f"""
+<style>
+@font-face {{
+    font-family: 'CustomSlopes';
+    src: url(data:font/truetype;charset=utf-8;base64,{font_base64}) format('truetype');
+}}
+
+.big-font {{
+    font-family: 'CustomSlopes', sans-serif;
+    font-size: 130px;
     text-align: center;
-}
+}}
 
-.highlight {
+.highlight {{
     color: #238636;
-}
+}}
 </style>
 """
 
-# Inject custom CSS
+# Inject the CSS into the Streamlit app
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Display text with the custom font
+# Display the text using the custom font
 st.markdown(
     "<div class='big-font'>NORA <em class='highlight'>AI</em></div>",
     unsafe_allow_html=True
