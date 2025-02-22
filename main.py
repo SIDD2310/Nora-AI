@@ -95,7 +95,7 @@ if clicked == 0:
 
     # st.video('img\videoplayback.mp4')
     # Redirecting to Eleven Labs
-    url = "https://space23.streamlit.app/"
+    url = "http://localhost:8502/"
     # url = "https://elevenlabs.io/app/talk-to?agent_id=W3HZWJljPMmSxbtsFoAD"
     # st.markdown(f"[Click here if not redirected]( {url} )", unsafe_allow_html=True)
 
