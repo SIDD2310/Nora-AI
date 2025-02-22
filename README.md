@@ -64,8 +64,7 @@ Parents or educators receive:
 ## Architecture & Workflow
 
 1. **Streamlit Frontend**  
-   - Hosts the web application.  
-   - Displays the custom “Space Exploration” design.  
+   - Hosts the web application.   
    - Integrates the ElevenLabs conversational widget via embedded HTML.
 
 2. **ElevenLabs Conversational AI**  
