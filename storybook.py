@@ -1,6 +1,7 @@
 from story_generation import generate_characters, generate_video, generate_text, lipsync, generate_audio
 from elevenlabs import play
 import requests
+import fal_client
 welcome_prompt = """Just like Dora the explorer, Generate a short introduction, introducing a very young kid to this space environment like it is starting out on a journey. 
 You are the character called <Sparkles> and are a <Unicorn>
 <Sparkles> is a friendly and curious unicorn who loves exploring and learning about the world around him. He has a bright and adventurous spirit and loves to go on adventures.
@@ -17,7 +18,7 @@ character_prompt = "Generate a character that is a young kid, who is curious and
 def welcome():
     welcome_text = generate_text.generate_text(welcome_prompt)
     print(welcome_text) #debug
-    welcome_voice = generate_audio.generate_audio(welcome_text)
+    welcome_voice_filename = generate_audio.generate_audio(welcome_text)
     #play(welcome_voice) #debug
     
     welcome_video = generate_video.generate_video("Unicorn", "Space", welcome_prompt)
@@ -31,22 +32,29 @@ def welcome():
             for chunk in response.iter_content(chunk_size=1024):
                 file.write(chunk)
     print(f"Download complete: {file_name}")
-    final_video = lipsync.lipsync(video_url, welcome_voice)
+    
+    
+    #video_url = "https://v3.fal.media/files/zebra/0OxyEYcA7wiwzwFcErpKW_video-1740206075.mp4"
+    
+    
+    #just the lypsync doesn't work perfectly yet
+    video_url = fal_client.upload_file("video-1740204924.mp4")
+    voice_url =  fal_client.upload_file("c22942db-9f98-49bc-a4ab-5024add7835d.mp3")
+    
+    print(video_url, voice_url) 
+    #url = fal_client.upload_file(welcome_voice_filename)
+    final_video = lipsync.lipsync(voice_url, video_url)
     print(final_video) #debug
-    # generate_characters(welcome_text,character_prompt)
-    
-    # for each in range(3):
-    #     character_text = generate_text(character_prompt)
-    #     print(character_text)
-    #     welcome_voice = generate_audio(character_text)
-    #     welcome_video = generate_video("Dora", "space", "Introduction", welcome_text)
-    #     lipsync(welcome_video, welcome_voice)
-    
-    
-    
+    video__final_url = final_video["video"]["url"]
+    file_name = final_video["video"]["file_name"]  # Use original file name
 
-    # print(welcome_video)
-    # lipsync(welcome_video)
+    response = requests.get(video__final_url, stream=True)
+    if response.status_code == 200:
+        with open(file_name, "wb") as file:
+            for chunk in response.iter_content(chunk_size=1024):
+                file.write(chunk)
+    print(f"Download complete: {file_name}")
+
 
 welcome()
 
