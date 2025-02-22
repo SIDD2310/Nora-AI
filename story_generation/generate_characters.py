@@ -5,7 +5,9 @@ def on_queue_update(update):
         for log in update.logs:
            print(log["message"])
 
-def generate_characters(character_prompt):
+def generate_characters(character, scenario, story_context, child_input):
+    text = f"{story_context} {child_input}"
+    character_name = character
     result = fal_client.subscribe(
         "fal-ai/flux/dev",
         arguments={

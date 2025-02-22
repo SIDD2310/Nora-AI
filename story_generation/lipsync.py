@@ -22,4 +22,3 @@ def lipsync(audio_filename, video_filename):
     return result
 
 
-
