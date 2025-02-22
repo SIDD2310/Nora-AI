@@ -6,10 +6,11 @@ Welcome to **NORA AI!** This application is designed to assist children—especi
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Key Features](#key-features)
-3. [Architecture & Workflow](#architecture--workflow)
-4. [Contributing](#contributing)
-5. [License](#license)
+2. [Market Potential](#market-potential)
+3. [Key Features](#key-features)
+4. [Architecture & Workflow](#architecture--workflow)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ---
 
@@ -22,6 +23,16 @@ Parents or educators receive:
 - A **complete transcript** of the conversation.
 - An **automated analysis** based on early childhood development frameworks.
 - Suggestions for **conversation starters**, **hands-on activities**, and **additional resources** to further enrich the child’s language environment.
+
+---
+
+## Market Potential
+
+The global *language learning market* is experiencing significant growth, projected to reach *$120.5 billion by 2030, growing at a **CAGR of 10.5%*. 
+
+With an increasing demand for *multilingual education* and *early language development tools, there is a significant opportunity for AI-driven solutions like **Nora AI* to make a lasting impact. 
+
+The market segment for *children’s language learning, in particular, remains largely underserved, highlighting the potential for **broad adoption in homes, schools, and early education programs worldwide*.
 
 ---
 
