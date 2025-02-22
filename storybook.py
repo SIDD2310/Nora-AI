@@ -1,5 +1,6 @@
 from story_generation import generate_characters, generate_video, generate_text, lipsync, generate_audio
 from elevenlabs import play
+import requests
 welcome_prompt = """Just like Dora the explorer, Generate a short introduction, introducing a very young kid to this space environment like it is starting out on a journey. 
 You are the character called <Sparkles> and are a <Unicorn>
 <Sparkles> is a friendly and curious unicorn who loves exploring and learning about the world around him. He has a bright and adventurous spirit and loves to go on adventures.
@@ -17,7 +18,21 @@ def welcome():
     welcome_text = generate_text.generate_text(welcome_prompt)
     print(welcome_text) #debug
     welcome_voice = generate_audio.generate_audio(welcome_text)
-    play(welcome_voice) #debug
+    #play(welcome_voice) #debug
+    
+    welcome_video = generate_video.generate_video("Unicorn", "Space", welcome_prompt)
+    video_url = welcome_video["video"]["url"]
+    file_name = welcome_video["video"]["file_name"]  # Use original file name
+
+# Download the video
+    response = requests.get(video_url, stream=True)
+    if response.status_code == 200:
+        with open(file_name, "wb") as file:
+            for chunk in response.iter_content(chunk_size=1024):
+                file.write(chunk)
+    print(f"Download complete: {file_name}")
+    final_video = lipsync.lipsync(video_url, welcome_voice)
+    print(final_video) #debug
     # generate_characters(welcome_text,character_prompt)
     
     # for each in range(3):
